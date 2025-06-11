@@ -1,0 +1,73 @@
+10.0372 	WARNING 	User requested fullscreen with size [1024  768], but screen is actually [2560, 1440]. Using actual size
+11.8325 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000027366385310>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000273663852B0>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000027366385100>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000002736669C2E0>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([2560, 1440]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+11.8326 	EXP 	window1: mouseVisible = True
+11.8326 	EXP 	window1: backgroundImage = ''
+11.8326 	EXP 	window1: backgroundFit = 'none'
+11.8340 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+11.8340 	EXP 	window1: recordFrameIntervals = False
+11.9994 	EXP 	window1: recordFrameIntervals = True
+12.1833 	EXP 	Screen (0) actual frame rate measured at 59.98Hz
+12.1834 	EXP 	window1: recordFrameIntervals = False
+12.1840 	EXP 	window1: mouseVisible = False
+16.6018 	EXP 	emotionalMovieTask: status = STARTED
+16.6021 	EXP 	window1: mouseVisible = True
+16.6751 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+16.6803 	EXP 	window1: mouseVisible = True
+16.7295 	EXP 	window1: mouseVisible = True
+16.7306 	EXP 	Created constantBlack = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-5.0, draggable=False, fillColor=array([-1, -1, -1]), fillColorSpace='rgb', fillRGB=array([-1, -1, -1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=1.0, name='constantBlack', opacity=1.0, ori=0.0, pos=array([-0.7 ,  0.45]), size=array([0.1, 0.1]), units='height', vertices=ndarray(...), win=Window(...))
+16.7307 	EXP 	window1: mouseVisible = True
+16.7322 	EXP 	Created photoDiode1 = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-6.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([0., 0., 0.]), lineColorSpace='rgb', lineRGB=array([0, 0, 0]), lineWidth=1.0, name='photoDiode1', opacity=0.5, ori=0.0, pos=array([-0.7 ,  0.45]), size=array([0.1, 0.1]), units='height', vertices=ndarray(...), win=Window(...))
+16.7323 	EXP 	window1: mouseVisible = True
+16.7332 	EXP 	Created photoDiode2 = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-7.0, draggable=False, fillColor=array([-1, -1, -1]), fillColorSpace='rgb', fillRGB=array([-1, -1, -1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=1.0, name='photoDiode2', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.5, 0.5]), units='height', vertices=ndarray(...), win=Window(...))
+16.7333 	EXP 	window1: mouseVisible = True
+16.7346 	EXP 	Created photoDiode3 = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-8.0, draggable=False, fillColor=array([-1, -1, -1]), fillColorSpace='rgb', fillRGB=array([-1, -1, -1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=1.0, name='photoDiode3', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.7, 0.5]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+0.0066 	EXP 	movie: autoLog = True
+0.0120 	EXP 	text: autoDraw = True
+1.6315 	EXP 	Imported configFile1.csv as conditions, 180 conditions, 6 params
+1.6327 	EXP 	Created sequence: random, trialTypes=180, nReps=1, seed=None
+1.6329 	EXP 	New trial (rep=0, index=0): OrderedDict([('fileName', '533.3-Too_Late-ED.mp4'), ('vidLen', 5.367), ('valence', 2.4179), ('arousal', 6.2727), ('impact', 5.8358), ('group', 'sad')])
+2.3370 	EXP 	text: autoDraw = False
+2.3370 	EXP 	photoDiode1: fillColor = <psychopy.colors.Color: white, alpha=1.0>
+2.3370 	EXP 	movie: autoDraw = True
+2.3370 	EXP 	constantBlack: autoDraw = True
+2.3370 	EXP 	photoDiode1: autoDraw = True
+2.3370 	EXP 	photoDiode2: autoDraw = True
+2.4224 	EXP 	photoDiode3: autoDraw = True
+2.5382 	EXP 	photoDiode1: autoDraw = False
+2.5382 	EXP 	photoDiode2: autoDraw = False
+2.6211 	EXP 	photoDiode3: autoDraw = False
+7.7877 	EXP 	New trial (rep=0, index=1): OrderedDict([('fileName', '930-A Musical Band Entertaining Customers in a Restaurant-ED.mp4'), ('vidLen', 13.506), ('valence', 6.8966), ('arousal', 4.7027), ('impact', 4.0588), ('group', 'happy')])
+8.5684 	EXP 	movie: autoDraw = False
+8.5684 	EXP 	constantBlack: autoDraw = False
+8.5684 	EXP 	photoDiode1: autoDraw = False
+8.5684 	EXP 	photoDiode2: autoDraw = False
+8.5684 	EXP 	photoDiode3: autoDraw = False
+8.5684 	EXP 	photoDiode1: fillColor = <psychopy.colors.Color: white, alpha=1.0>
+8.5684 	EXP 	movie: autoDraw = True
+8.5684 	EXP 	constantBlack: autoDraw = True
+8.5684 	EXP 	photoDiode1: autoDraw = True
+8.5684 	EXP 	photoDiode2: autoDraw = True
+8.5865 	EXP 	photoDiode3: autoDraw = True
+8.7767 	EXP 	photoDiode1: autoDraw = False
+8.7767 	EXP 	photoDiode2: autoDraw = False
+8.7927 	EXP 	photoDiode3: autoDraw = False
+22.1705 	EXP 	New trial (rep=0, index=2): OrderedDict([('fileName', '738.1-Pouring Beer Slow Motion-ED.mp4'), ('vidLen', 8.7), ('valence', 5.1429), ('arousal', 3.0556), ('impact', 2.7273), ('group', 'neut')])
+23.0194 	EXP 	movie: autoDraw = False
+23.0194 	EXP 	constantBlack: autoDraw = False
+23.0194 	EXP 	photoDiode1: autoDraw = False
+23.0194 	EXP 	photoDiode2: autoDraw = False
+23.0194 	EXP 	photoDiode3: autoDraw = False
+23.0194 	EXP 	photoDiode1: fillColor = <psychopy.colors.Color: white, alpha=1.0>
+23.0194 	EXP 	movie: autoDraw = True
+23.0194 	EXP 	constantBlack: autoDraw = True
+23.0194 	EXP 	photoDiode1: autoDraw = True
+23.0194 	EXP 	photoDiode2: autoDraw = True
+23.0194 	EXP 	photoDiode3: autoDraw = True
+23.2213 	EXP 	photoDiode1: autoDraw = False
+23.2213 	EXP 	photoDiode2: autoDraw = False
+23.2213 	EXP 	photoDiode3: autoDraw = False
+24.7065 	EXP 	emotionalMovieTask: status = STOPPED
+24.7205 	EXP 	movie: autoDraw = False
+24.7205 	EXP 	constantBlack: autoDraw = False
+24.7206 	EXP 	emotionalMovieTask: status = STOPPED
+24.8325 	EXP 	window1: mouseVisible = True

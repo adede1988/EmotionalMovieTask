@@ -1,0 +1,3 @@
+﻿trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,fileName,vidLen,valence,arousal,impact,group,thisRow.t,notes,Instructions.started,text.started,key_resp.started,Instructions.stopped,key_resp.keys,key_resp.rt,key_resp.duration,MoviePresent.started,movie.started,constantBlack.started,participant,session,date,expName,psychopyVersion,frameRate,expStart,
+,,,,,,,,,,,,0.005072199972346425,0.010188099928200245,0.010188099928200245,1.1953115998767316,space,1.168482300126925,None,,,,683611,001,2025-06-11_16h33.52.508,emotionalMovieTask,2023.2.3,59.85719269537953,2025-06-11 16h34.01.271160 -0500,
+,,,,,,,,,,,,,,,,,,,1.2072012999560684,,,,,,,,,,

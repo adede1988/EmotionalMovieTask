@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2023.2.3),
-    on June 11, 2025, at 13:34
+    on June 11, 2025, at 16:49
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -320,7 +320,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "Instructions" ---
     text = visual.TextStim(win=win, name='text',
-        text='These are instructions',
+        text='For this task, please pay attention to the video clips\n\n',
         font='Open Sans',
         pos=(0, 0), height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
@@ -329,6 +329,9 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     key_resp = keyboard.Keyboard()
     
     # --- Initialize components for Routine "MoviePresent" ---
+    # Set experiment start values for variable component customColor2
+    customColor2 = [-1,-1,-1]
+    customColor2Container = []
     # Set experiment start values for variable component customColor
     customColor = [-1, -1, -1]
     customColorContainer = []
@@ -338,20 +341,32 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         loop=False, volume=1.0, noAudio=False,
         pos=(0, 0), size=(0.8, 0.45), units=win.units,
         ori=0.0, anchor='center',opacity=None, contrast=1.0,
-        depth=-3
+        depth=-4
     )
     constantBlack = visual.Rect(
         win=win, name='constantBlack',
         width=(0.1, 0.1)[0], height=(0.1, 0.1)[1],
-        ori=0.0, pos=(-.4, .4), anchor='center',
+        ori=0.0, pos=(-.7, .45), anchor='center',
         lineWidth=1.0,     colorSpace='rgb',  lineColor=[-1, -1, -1], fillColor=[-1, -1, -1],
-        opacity=None, depth=-4.0, interpolate=True)
-    polygon = visual.Rect(
-        win=win, name='polygon',
-        width=(0.1, 0.1)[0], height=(0.1, 0.1)[1],
-        ori=0.0, pos=(-.4, .4), anchor='center',
-        lineWidth=1.0,     colorSpace='rgb',  lineColor=None, fillColor='white',
         opacity=None, depth=-5.0, interpolate=True)
+    photoDiode1 = visual.Rect(
+        win=win, name='photoDiode1',
+        width=(0.1, 0.1)[0], height=(0.1, 0.1)[1],
+        ori=0.0, pos=(-.7, .45), anchor='center',
+        lineWidth=1.0,     colorSpace='rgb',  lineColor=None, fillColor='white',
+        opacity=None, depth=-6.0, interpolate=True)
+    photoDiode2 = visual.Rect(
+        win=win, name='photoDiode2',
+        width=(0.1, 0.1)[0], height=(0.1, 0.1)[1],
+        ori=0.0, pos=(-.7, .45), anchor='center',
+        lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
+        opacity=None, depth=-7.0, interpolate=True)
+    photoDiode3 = visual.Rect(
+        win=win, name='photoDiode3',
+        width=(.1, 0.1)[0], height=(.1, 0.1)[1],
+        ori=0.0, pos=(-.7, .45), anchor='center',
+        lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
+        opacity=None, depth=-8.0, interpolate=True)
     
     # create some handy timers
     if globalClock is None:
@@ -418,7 +433,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         # if text is stopping this frame...
         if text.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > text.tStartRefresh + 100-frameTolerance:
+            if tThisFlipGlobal > text.tStartRefresh + 10000-frameTolerance:
                 # keep track of stop time/frame for later
                 text.tStop = t  # not accounting for scr refresh
                 text.frameNStop = frameN  # exact frame index
@@ -496,7 +511,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     # set up handler to look after randomisation of conditions etc
     trials = data.TrialHandler(nReps=1.0, method='random', 
         extraInfo=expInfo, originPath=-1,
-        trialList=data.importConditions('configFile1.csv', selection='1:5'),
+        trialList=data.importConditions('configFile1.csv'),
         seed=None, name='trials')
     thisExp.addLoop(trials)  # add the loop to the experiment
     thisTrial = trials.trialList[0]  # so we can initialise stimuli with some values
@@ -526,20 +541,31 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         continueRoutine = True
         # update component parameters for each repeat
         thisExp.addData('MoviePresent.started', globalClock.getTime())
-        # Run 'Begin Routine' code from code_2
-        if customColor[0] == -1:
-            customColor = [1, 1, 1]
-        else:
-             customColor = [-1, -1, -1]   
+        # Run 'Begin Routine' code from colorHandler
+        if group == "neut":
+            customColor = [-1, -1, -1]
+            customColor2 = [-1, -1, -1]
+        if group == "happy": 
+             customColor = [1, 1, 1]   
+             customColor2 = [-1, -1, -1]
+        if group == "sad": 
+             customColor = [1, 1, 1]   
+             customColor2 = [1, 1, 1]
+             
+             
         # Run 'Begin Routine' code from filePathHandler
         
         fullFilePath = os.path.join(_thisDir, 
                                 'resources', 'vids',
                                  fileName)
         movie.setMovie(fullFilePath)
-        polygon.setFillColor([1,1,1])
+        photoDiode1.setFillColor([1,1,1])
+        photoDiode2.setFillColor(customColor)
+        photoDiode2.setLineColor(customColor)
+        photoDiode3.setFillColor(customColor2)
+        photoDiode3.setLineColor(customColor2)
         # keep track of which components have finished
-        MoviePresentComponents = [movie, constantBlack, polygon]
+        MoviePresentComponents = [movie, constantBlack, photoDiode1, photoDiode2, photoDiode3]
         for thisComponent in MoviePresentComponents:
             thisComponent.tStart = None
             thisComponent.tStop = None
@@ -561,6 +587,16 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
             tThisFlipGlobal = win.getFutureFlipTime(clock=None)
             frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
             # update/draw components on each frame
+            # Run 'Each Frame' code from colorHandler
+            if group == "neut":
+                customColor = [-1, -1, -1]
+                customColor2 = [-1, -1, -1]
+            if group == "happy": 
+                 customColor = [1, 1, 1]   
+                 customColor2 = [-1, -1, -1]
+            if group == "sad": 
+                 customColor = [1, 1, 1]   
+                 customColor2 = [1, 1, 1]
             
             # *movie* updates
             
@@ -627,38 +663,104 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
                     constantBlack.status = FINISHED
                     constantBlack.setAutoDraw(False)
             
-            # *polygon* updates
+            # *photoDiode1* updates
             
-            # if polygon is starting this frame...
-            if polygon.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # if photoDiode1 is starting this frame...
+            if photoDiode1.status == NOT_STARTED and tThisFlip >= 2-frameTolerance:
                 # keep track of start time/frame for later
-                polygon.frameNStart = frameN  # exact frame index
-                polygon.tStart = t  # local t and not account for scr refresh
-                polygon.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(polygon, 'tStartRefresh')  # time at next scr refresh
+                photoDiode1.frameNStart = frameN  # exact frame index
+                photoDiode1.tStart = t  # local t and not account for scr refresh
+                photoDiode1.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(photoDiode1, 'tStartRefresh')  # time at next scr refresh
                 # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'polygon.started')
+                thisExp.timestampOnFlip(win, 'photoDiode1.started')
                 # update status
-                polygon.status = STARTED
-                polygon.setAutoDraw(True)
+                photoDiode1.status = STARTED
+                photoDiode1.setAutoDraw(True)
             
-            # if polygon is active this frame...
-            if polygon.status == STARTED:
+            # if photoDiode1 is active this frame...
+            if photoDiode1.status == STARTED:
                 # update params
                 pass
             
-            # if polygon is stopping this frame...
-            if polygon.status == STARTED:
+            # if photoDiode1 is stopping this frame...
+            if photoDiode1.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > polygon.tStartRefresh + .25-frameTolerance:
+                if tThisFlipGlobal > photoDiode1.tStartRefresh + .20-frameTolerance:
                     # keep track of stop time/frame for later
-                    polygon.tStop = t  # not accounting for scr refresh
-                    polygon.frameNStop = frameN  # exact frame index
+                    photoDiode1.tStop = t  # not accounting for scr refresh
+                    photoDiode1.frameNStop = frameN  # exact frame index
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'polygon.stopped')
+                    thisExp.timestampOnFlip(win, 'photoDiode1.stopped')
                     # update status
-                    polygon.status = FINISHED
-                    polygon.setAutoDraw(False)
+                    photoDiode1.status = FINISHED
+                    photoDiode1.setAutoDraw(False)
+            
+            # *photoDiode2* updates
+            
+            # if photoDiode2 is starting this frame...
+            if photoDiode2.status == NOT_STARTED and tThisFlip >= 2.4-frameTolerance:
+                # keep track of start time/frame for later
+                photoDiode2.frameNStart = frameN  # exact frame index
+                photoDiode2.tStart = t  # local t and not account for scr refresh
+                photoDiode2.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(photoDiode2, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'photoDiode2.started')
+                # update status
+                photoDiode2.status = STARTED
+                photoDiode2.setAutoDraw(True)
+            
+            # if photoDiode2 is active this frame...
+            if photoDiode2.status == STARTED:
+                # update params
+                pass
+            
+            # if photoDiode2 is stopping this frame...
+            if photoDiode2.status == STARTED:
+                # is it time to stop? (based on global clock, using actual start)
+                if tThisFlipGlobal > photoDiode2.tStartRefresh + .2-frameTolerance:
+                    # keep track of stop time/frame for later
+                    photoDiode2.tStop = t  # not accounting for scr refresh
+                    photoDiode2.frameNStop = frameN  # exact frame index
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'photoDiode2.stopped')
+                    # update status
+                    photoDiode2.status = FINISHED
+                    photoDiode2.setAutoDraw(False)
+            
+            # *photoDiode3* updates
+            
+            # if photoDiode3 is starting this frame...
+            if photoDiode3.status == NOT_STARTED and tThisFlip >= 2.8-frameTolerance:
+                # keep track of start time/frame for later
+                photoDiode3.frameNStart = frameN  # exact frame index
+                photoDiode3.tStart = t  # local t and not account for scr refresh
+                photoDiode3.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(photoDiode3, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'photoDiode3.started')
+                # update status
+                photoDiode3.status = STARTED
+                photoDiode3.setAutoDraw(True)
+            
+            # if photoDiode3 is active this frame...
+            if photoDiode3.status == STARTED:
+                # update params
+                pass
+            
+            # if photoDiode3 is stopping this frame...
+            if photoDiode3.status == STARTED:
+                # is it time to stop? (based on global clock, using actual start)
+                if tThisFlipGlobal > photoDiode3.tStartRefresh + .2-frameTolerance:
+                    # keep track of stop time/frame for later
+                    photoDiode3.tStop = t  # not accounting for scr refresh
+                    photoDiode3.frameNStop = frameN  # exact frame index
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'photoDiode3.stopped')
+                    # update status
+                    photoDiode3.status = FINISHED
+                    photoDiode3.setAutoDraw(False)
             
             # check for quit (typically the Esc key)
             if defaultKeyboard.getKeys(keyList=["escape"]):
@@ -687,6 +789,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
                 thisComponent.setAutoDraw(False)
         thisExp.addData('MoviePresent.stopped', globalClock.getTime())
         
+        
         movie.stop()  # ensure movie has stopped at end of Routine
         # the Routine "MoviePresent" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
@@ -696,6 +799,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
             # if running in a Session with a Liaison client, send data up to now
             thisSession.sendExperimentData()
     # completed 1.0 repeats of 'trials'
+    
     
     
     

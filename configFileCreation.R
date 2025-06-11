@@ -141,59 +141,89 @@ if (!"fileName" %in% names(file_data)) {
   stop("The CSV file does not contain a column named 'fileName'.")
 }
 
+
+
+library(stringr)
+
+# Define your overrides as a named vector
+manual_fixes <- c(
+  "546.4-MeToo_Is_Changing_How_Sex_Is_Simulated_on_Set-ED.mp4" = "546.4-#MeToo_Is_Changing_How_Sex_Is_Simulated_on_Set-ED.mp4",
+  "470.4-Shark_Bite_GoPro_DiveFilm_HD_Podcast-ED.mp4" = "470.4-Shark_Bite_GoPro!_DiveFilm_HD_Podcast-ED.mp4",
+  "650-Womans_Hands_Typing-ED.mp4" = "650-Woman's Hands Typing-ED.mp4",
+  "327-New_Year_Eve_Party-ED.mp4" = "327-New Year's Eve Party-ED.mp4",
+  "668.4-Most_HEARTWARMING_Military_Homecoming_Surprises-ED.mp4" = "668.4-Most_HEARTWARMING_Military_Homecoming_Surprises!-ED.mp4",
+  "601.1_-_Woman_Runs_Over_Boyfriend_With_Car_After_Learning_Hes_HIV_Positive_-_ED_1.mp4" = "601.1 - Woman Runs Over Boyfriend With Car After Learning He's HIV Positive - ED 1.mp4",
+  "526.3-Monster_EXPLICIT-ED2.mp4" = "526.3-Monster_(EXPLICIT)-ED2.mp4",
+  "600.3_-_Injecting_Speedball_-_Crack__Heroin-_ED.mp4" = "600.3_-_Injecting_Speedball_-_Crack_&_Heroin-_ED.mp4",
+  "629.3-Las_Vegas_Shooting_Watch_Cops_Body_Cam_of_Dramatic_Chase-ED.mp4" = "629.3-Las_Vegas_Shooting_Watch_Cop's_Body_Cam_of_Dramatic_Chase-ED.mp4",
+  "600.4_-_Injecting_Speedball_-_Crack__Heroin-_ED.mp4" = "600.4_-_Injecting_Speedball_-_Crack_&_Heroin-_ED.mp4",
+  "696.3-Eggnog_Gallon_Challenge_WARNING_Projectile_Vomiting-ED.mp4" = "696.3-Eggnog_Gallon_Challenge_WARNING!_Projectile_Vomiting-ED.mp4",
+  "428.4-Police_Academy_6_featuring_Raw_Moans_-_The_Chills-ED.mp4" = "428.4-Police_Academy_6_(featuring_Raw_Moans)_-_The_Chills-ED.mp4"
+)
+
+
 # Iterate and copy files
 ii = 1
 for (file in file_data$fileName) {
   
-  #hard codes for files names that didn't work: 
-  if(file == '546.4-MeToo Is Changing How Sex Is Simulated on Set-ED.mp4'){
-    configFile$fileName[ii] = '546.4-#MeToo_Is_Changing_How_Sex_Is_Simulated_on_Set-ED.mp4'
-    file = configFile$fileName[ii]
+  # #hard codes for files names that didn't work: 
+  # if(file == '546.4-MeToo Is Changing How Sex Is Simulated on Set-ED.mp4'){
+  #   configFile$fileName[ii] = '546.4-#MeToo_Is_Changing_How_Sex_Is_Simulated_on_Set-ED.mp4'
+  #   file = configFile$fileName[ii]
+  # }
+  # if(file == '470.4-Shark Bite GoPro DiveFilm HD Podcast-ED.mp4'){
+  #   configFile$fileName[ii] = '470.4-Shark_Bite_GoPro!_DiveFilm_HD_Podcast-ED.mp4'
+  #   file = configFile$fileName[ii]
+  # }
+  # if(file == '650-Womans Hands Typing-ED.mp4'){
+  #   configFile$fileName[ii] = "650-Woman's Hands Typing-ED.mp4"
+  #   file = configFile$fileName[ii]
+  # }
+  # if(file == '327-New Year Eve Party-ED.mp4'){
+  #   configFile$fileName[ii] = "327-New Year's Eve Party-ED.mp4"
+  #   file = configFile$fileName[ii]
+  # }
+  # if(file == '668.4-Most HEARTWARMING Military Homecoming Surprises-ED.mp4'){
+  #   configFile$fileName[ii] = "668.4-Most_HEARTWARMING_Military_Homecoming_Surprises!-ED.mp4"
+  #   file = configFile$fileName[ii]
+  # }
+  # if(file == '601.1 - Woman Runs Over Boyfriend With Car After Learning Hes HIV Positive - ED 1.mp4'){
+  #   configFile$fileName[ii] = "601.1 - Woman Runs Over Boyfriend With Car After Learning He's HIV Positive - ED 1.mp4"
+  #   file = configFile$fileName[ii]
+  # }
+  # if(file == '526.3-Monster EXPLICIT-ED2.mp4'){
+  #   configFile$fileName[ii] = "526.3-Monster_(EXPLICIT)-ED2.mp4"
+  #   file = configFile$fileName[ii]
+  # }
+  # if(file == '600.3 - Injecting Speedball - Crack  Heroin- ED.mp4'){
+  #   configFile$fileName[ii] = "600.3_-_Injecting_Speedball_-_Crack_&_Heroin-_ED.mp4"
+  #   file = configFile$fileName[ii]
+  # }
+  # if(file == '629.3-Las Vegas Shooting Watch Cops Body Cam of Dramatic Chase-ED.mp4'){
+  #   configFile$fileName[ii] = "629.3-Las_Vegas_Shooting_Watch_Cop's_Body_Cam_of_Dramatic_Chase-ED.mp4"
+  #   file = configFile$fileName[ii]
+  # }
+  # if(file == '600.4 - Injecting Speedball - Crack  Heroin- ED.mp4'){
+  #   configFile$fileName[ii] = "600.4_-_Injecting_Speedball_-_Crack_&_Heroin-_ED.mp4"
+  #   file = configFile$fileName[ii]
+  # }
+  # if(file == '696.3-Eggnog Gallon Challenge WARNING Projectile Vomiting-ED.mp4'){
+  #   configFile$fileName[ii] = "696.3-Eggnog_Gallon_Challenge_WARNING!_Projectile_Vomiting-ED.mp4"
+  #   file = configFile$fileName[ii]
+  # }
+  # if(file == '428.4-Police Academy 6 featuring Raw Moans - The Chills-ED.mp4'){
+  #   configFile$fileName[ii] = "428.4-Police_Academy_6_(featuring_Raw_Moans)_-_The_Chills-ED.mp4"
+  #   file = configFile$fileName[ii]
+  # }
+  file_clean <- str_squish(file)  # removes extra spaces and trims
+  file_clean <- iconv(file_clean, to = "ASCII//TRANSLIT")
+  if (file_clean %in% names(manual_fixes)) {
+    print(paste("Manual fix triggered for:", file_clean))
+    corrected <- manual_fixes[[file]]
+    configFile$fileName[ii] <- corrected
+    file <- corrected
   }
-  if(file == '470.4-Shark Bite GoPro DiveFilm HD Podcast-ED.mp4'){
-    configFile$fileName[ii] = '470.4-Shark_Bite_GoPro!_DiveFilm_HD_Podcast-ED.mp4'
-    file = configFile$fileName[ii]
-  }
-  if(file == '650-Womans Hands Typing-ED.mp4'){
-    configFile$fileName[ii] = "650-Woman's Hands Typing-ED.mp4"
-    file = configFile$fileName[ii]
-  }
-  if(file == '327-New Year Eve Party-ED.mp4'){
-    configFile$fileName[ii] = "327-New Year's Eve Party-ED.mp4"
-    file = configFile$fileName[ii]
-  }
-  if(file == '668.4-Most HEARTWARMING Military Homecoming Surprises-ED.mp4'){
-    configFile$fileName[ii] = "668.4-Most_HEARTWARMING_Military_Homecoming_Surprises!-ED.mp4"
-    file = configFile$fileName[ii]
-  }
-  if(file == '601.1 - Woman Runs Over Boyfriend With Car After Learning Hes HIV Positive - ED 1.mp4'){
-    configFile$fileName[ii] = "601.1 - Woman Runs Over Boyfriend With Car After Learning He's HIV Positive - ED 1.mp4"
-    file = configFile$fileName[ii]
-  }
-  if(file == '526.3-Monster EXPLICIT-ED2.mp4'){
-    configFile$fileName[ii] = "526.3-Monster_(EXPLICIT)-ED2.mp4"
-    file = configFile$fileName[ii]
-  }
-  if(file == '600.3 - Injecting Speedball - Crack  Heroin- ED.mp4'){
-    configFile$fileName[ii] = "600.3_-_Injecting_Speedball_-_Crack_&_Heroin-_ED.mp4"
-    file = configFile$fileName[ii]
-  }
-  if(file == '629.3-Las Vegas Shooting Watch Cops Body Cam of Dramatic Chase-ED.mp4'){
-    configFile$fileName[ii] = "629.3-Las_Vegas_Shooting_Watch_Cop's_Body_Cam_of_Dramatic_Chase-ED.mp4"
-    file = configFile$fileName[ii]
-  }
-  if(file == '600.4 - Injecting Speedball - Crack  Heroin- ED.mp4'){
-    configFile$fileName[ii] = "600.4_-_Injecting_Speedball_-_Crack_&_Heroin-_ED.mp4"
-    file = configFile$fileName[ii]
-  }
-  if(file == '696.3-Eggnog Gallon Challenge WARNING Projectile Vomiting-ED.mp4'){
-    configFile$fileName[ii] = "696.3-Eggnog_Gallon_Challenge_WARNING!_Projectile_Vomiting-ED.mp4"
-    file = configFile$fileName[ii]
-  }
-  if(file == '428.4-Police Academy 6 featuring Raw Moans - The Chills-ED.mp4'){
-    configFile$fileName[ii] = "428.4-Police_Academy_6_(featuring_Raw_Moans)_-_The_Chills-ED.mp4"
-    file = configFile$fileName[ii]
-  }
+  
   
   source_file <- file.path(source_folder, file)
   target_file <- file.path(target_folder, file)
@@ -209,6 +239,7 @@ for (file in file_data$fileName) {
       file.copy(from = source_file, to = target_file, overwrite = TRUE)
     } else { 
       warning(paste("File not found:", source_file))
+      print(ii)
     }
     
     # warning(paste("File not found:", source_file))
