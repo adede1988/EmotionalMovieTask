@@ -1,0 +1,62 @@
+17.8878 	WARNING 	User requested fullscreen with size [1024  768], but screen is actually [2560, 1440]. Using actual size
+19.6280 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000018FDCDED100>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000018FDCDED0A0>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000018FDCD9BF40>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000018FDD13B0A0>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([2560, 1440]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+19.6281 	EXP 	window1: mouseVisible = True
+19.6281 	EXP 	window1: backgroundImage = ''
+19.6281 	EXP 	window1: backgroundFit = 'none'
+19.6296 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+19.6296 	EXP 	window1: recordFrameIntervals = False
+19.7943 	EXP 	window1: recordFrameIntervals = True
+19.9780 	EXP 	Screen (0) actual frame rate measured at 59.93Hz
+19.9780 	EXP 	window1: recordFrameIntervals = False
+19.9781 	EXP 	window1: mouseVisible = False
+24.3010 	EXP 	emotionalMovieTask: status = STARTED
+24.3015 	EXP 	window1: mouseVisible = True
+24.3629 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='These are instructions', units='height', win=Window(...), wrapWidth=1)
+24.3679 	EXP 	window1: mouseVisible = True
+24.4161 	EXP 	window1: mouseVisible = True
+24.4174 	EXP 	Created constantBlack = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-4.0, draggable=False, fillColor=array([-1, -1, -1]), fillColorSpace='rgb', fillRGB=array([-1, -1, -1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=1.0, name='constantBlack', opacity=1.0, ori=0.0, pos=array([-0.4,  0.4]), size=array([0.1, 0.1]), units='height', vertices=ndarray(...), win=Window(...))
+24.4175 	EXP 	window1: mouseVisible = True
+24.4190 	EXP 	Created polygon = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-5.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([0., 0., 0.]), lineColorSpace='rgb', lineRGB=array([0, 0, 0]), lineWidth=1.0, name='polygon', opacity=0.5, ori=0.0, pos=array([-0.4,  0.4]), size=array([0.1, 0.1]), units='height', vertices=ndarray(...), win=Window(...))
+0.0055 	EXP 	movie: autoLog = True
+0.0103 	EXP 	text: autoDraw = True
+0.8477 	EXP 	Imported configFile1.csv as conditions, 4 conditions, 6 params
+0.8480 	EXP 	Created sequence: random, trialTypes=4, nReps=1, seed=None
+0.8481 	EXP 	New trial (rep=0, index=0): OrderedDict([('fileName', '831-Close Up Bow Playing Violin-ED.mp4'), ('vidLen', 15.073), ('valence', 5.5), ('arousal', 3.037), ('impact', 3.1538), ('group', 'neut')])
+1.0802 	EXP 	text: autoDraw = False
+1.0802 	EXP 	polygon: fillColor = <psychopy.colors.Color: white, alpha=1.0>
+1.0802 	EXP 	movie: autoDraw = True
+1.0802 	EXP 	constantBlack: autoDraw = True
+1.0802 	EXP 	polygon: autoDraw = True
+1.3321 	EXP 	polygon: autoDraw = False
+16.1834 	EXP 	New trial (rep=0, index=1): OrderedDict([('fileName', '685.22-Romantic_Happy_Couple_Showing_Love-ED.mp4'), ('vidLen', 9.967), ('valence', 5.913), ('arousal', 2.7143), ('impact', 2.05), ('group', 'neut')])
+16.4837 	EXP 	movie: autoDraw = False
+16.4837 	EXP 	constantBlack: autoDraw = False
+16.4837 	EXP 	polygon: autoDraw = False
+16.4837 	EXP 	polygon: fillColor = <psychopy.colors.Color: white, alpha=1.0>
+16.4837 	EXP 	movie: autoDraw = True
+16.4837 	EXP 	constantBlack: autoDraw = True
+16.4837 	EXP 	polygon: autoDraw = True
+16.7452 	EXP 	polygon: autoDraw = False
+26.5430 	EXP 	New trial (rep=0, index=2): OrderedDict([('fileName', '646-Woman Crocheting-ED.mp4'), ('vidLen', 7.811), ('valence', 5.3077), ('arousal', 3.4643), ('impact', 3.0263), ('group', 'neut')])
+26.8698 	EXP 	movie: autoDraw = False
+26.8698 	EXP 	constantBlack: autoDraw = False
+26.8698 	EXP 	polygon: autoDraw = False
+26.8698 	EXP 	polygon: fillColor = <psychopy.colors.Color: white, alpha=1.0>
+26.8698 	EXP 	movie: autoDraw = True
+26.8698 	EXP 	constantBlack: autoDraw = True
+26.8698 	EXP 	polygon: autoDraw = True
+27.1198 	EXP 	polygon: autoDraw = False
+34.7623 	EXP 	New trial (rep=0, index=3): OrderedDict([('fileName', '641.1-Free Couple Holding Hands-ED.mp4'), ('vidLen', 12.539), ('valence', 6.4286), ('arousal', 3.2), ('impact', 3.2821), ('group', 'neut')])
+35.0716 	EXP 	movie: autoDraw = False
+35.0716 	EXP 	constantBlack: autoDraw = False
+35.0716 	EXP 	polygon: autoDraw = False
+35.0716 	EXP 	polygon: fillColor = <psychopy.colors.Color: white, alpha=1.0>
+35.0716 	EXP 	movie: autoDraw = True
+35.0716 	EXP 	constantBlack: autoDraw = True
+35.0716 	EXP 	polygon: autoDraw = True
+35.3269 	EXP 	polygon: autoDraw = False
+47.6683 	EXP 	movie: autoDraw = False
+47.6683 	EXP 	constantBlack: autoDraw = False
+47.6683 	EXP 	polygon: autoDraw = False
+47.6684 	EXP 	emotionalMovieTask: status = STOPPED
+47.7808 	EXP 	window1: mouseVisible = True

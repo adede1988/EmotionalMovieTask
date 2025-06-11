@@ -1,0 +1,18 @@
+193.0385 	WARNING 	User requested fullscreen with size [1024  768], but screen is actually [2560, 1440]. Using actual size
+194.8333 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000236785EC0D0>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000236785EC070>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000236785D9F10>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000002367897B0A0>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([2560, 1440]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+194.8335 	EXP 	window1: mouseVisible = True
+194.8336 	EXP 	window1: backgroundImage = ''
+194.8337 	EXP 	window1: backgroundFit = 'none'
+194.8400 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+194.8401 	EXP 	window1: recordFrameIntervals = False
+194.9988 	EXP 	window1: recordFrameIntervals = True
+195.1822 	EXP 	Screen (0) actual frame rate measured at 59.89Hz
+195.1823 	EXP 	window1: recordFrameIntervals = False
+195.1823 	EXP 	window1: mouseVisible = False
+199.5955 	EXP 	emotionalMovieTask: status = STARTED
+199.5960 	EXP 	window1: mouseVisible = True
+199.6589 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='These are instructions', units='height', win=Window(...), wrapWidth=1)
+199.6641 	EXP 	window1: mouseVisible = True
+0.0059 	EXP 	movie: autoLog = True
+0.0108 	EXP 	text: autoDraw = True
+1.5233 	EXP 	window1: mouseVisible = True
