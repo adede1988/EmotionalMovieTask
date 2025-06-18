@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2023.2.3),
-    on June 11, 2025, at 16:49
+    on June 18, 2025, at 14:35
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -367,6 +367,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         ori=0.0, pos=(-.7, .45), anchor='center',
         lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
         opacity=None, depth=-8.0, interpolate=True)
+    key_resp_2 = keyboard.Keyboard()
     
     # create some handy timers
     if globalClock is None:
@@ -564,8 +565,11 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         photoDiode2.setLineColor(customColor)
         photoDiode3.setFillColor(customColor2)
         photoDiode3.setLineColor(customColor2)
+        key_resp_2.keys = []
+        key_resp_2.rt = []
+        _key_resp_2_allKeys = []
         # keep track of which components have finished
-        MoviePresentComponents = [movie, constantBlack, photoDiode1, photoDiode2, photoDiode3]
+        MoviePresentComponents = [movie, constantBlack, photoDiode1, photoDiode2, photoDiode3, key_resp_2]
         for thisComponent in MoviePresentComponents:
             thisComponent.tStart = None
             thisComponent.tStop = None
@@ -762,6 +766,34 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
                     photoDiode3.status = FINISHED
                     photoDiode3.setAutoDraw(False)
             
+            # *key_resp_2* updates
+            waitOnFlip = False
+            
+            # if key_resp_2 is starting this frame...
+            if key_resp_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                key_resp_2.frameNStart = frameN  # exact frame index
+                key_resp_2.tStart = t  # local t and not account for scr refresh
+                key_resp_2.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(key_resp_2, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'key_resp_2.started')
+                # update status
+                key_resp_2.status = STARTED
+                # keyboard checking is just starting
+                waitOnFlip = True
+                win.callOnFlip(key_resp_2.clock.reset)  # t=0 on next screen flip
+                win.callOnFlip(key_resp_2.clearEvents, eventType='keyboard')  # clear events on next screen flip
+            if key_resp_2.status == STARTED and not waitOnFlip:
+                theseKeys = key_resp_2.getKeys(keyList=['space'], ignoreKeys=["escape"], waitRelease=False)
+                _key_resp_2_allKeys.extend(theseKeys)
+                if len(_key_resp_2_allKeys):
+                    key_resp_2.keys = _key_resp_2_allKeys[-1].name  # just the last key pressed
+                    key_resp_2.rt = _key_resp_2_allKeys[-1].rt
+                    key_resp_2.duration = _key_resp_2_allKeys[-1].duration
+                    # a response ends the routine
+                    continueRoutine = False
+            
             # check for quit (typically the Esc key)
             if defaultKeyboard.getKeys(keyList=["escape"]):
                 thisExp.status = FINISHED
@@ -791,6 +823,13 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         
         
         movie.stop()  # ensure movie has stopped at end of Routine
+        # check responses
+        if key_resp_2.keys in ['', [], None]:  # No response was made
+            key_resp_2.keys = None
+        trials.addData('key_resp_2.keys',key_resp_2.keys)
+        if key_resp_2.keys != None:  # we had a response
+            trials.addData('key_resp_2.rt', key_resp_2.rt)
+            trials.addData('key_resp_2.duration', key_resp_2.duration)
         # the Routine "MoviePresent" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         thisExp.nextEntry()
